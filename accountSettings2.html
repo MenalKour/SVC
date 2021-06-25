@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ACCOUNT SETTINGS</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            
+
+        
+  <script src='js/index.js'></script>
+   
+            <!-- MATERIAL DESIGN ICONIC FONT -->
+           <!-- MATERIAL DESIGN ICONIC FONT -->
+           <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+           <!-- STYLE CSS -->
+   <link rel="stylesheet" href="design_files/css/style.css">
+  
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+   <style>
+    body{
+     background-image: url('design_files/images/accountSettingsback1.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+    }
+</style>
+ </head>
+ <body>
+
+     <center>      
+<h2 style="color: black; justify-content: center;font-family: algerian;"><img src='menal.png'style="width:150px;height:150px;">                    MARAVILLOSAS CASA</h2>
+</center>
+<div class="btn" style="margin-left:85%;margin-top: -20%;">
+  <a href="MainPage1.html">
+    <button id="btn-back" type="button" style="font-family: algerian;">BACK
+        <i class="zmdi  zmdi-arrow-left"></i>
+      </button>
+  </a>
+    
+</div>
+<div class="wrapper">
+
+
+ <div class="inner">
+    
+<div class="image-holder">
+    <img src='design_files/images/asettings.jpg'>
+</div>
+    <form action="">
+        <h3 style="font-family: algerian;">ACCOUNT SETTINGS </h3>
+        <div class="form-group">
+         
+          <input id="firstName" type="text" placeholder="FIRST NAME" class="form-control">
+          <input id="lastName" type="text" placeholder="LAST NAME" class="form-control">
+       
+        </div>
+       <div class="form-wrapper">
+         
+          <select name="" id="country" class="form-control">
+              <option value="" disabled selected>COUNTRY</option>
+              <option value="ITALY">ITALY</option>
+              <option value="USA">USA</option>
+              <option value="PAKISTAN">PAKISTAN</option>
+              <option value="INDIA">INDIA</option>
+              <option value="FRANCE">FRANCE</option>
+              <option value="CHINA">CHINA</option>
+              <option value="SPAIN">SPAIN</option>
+              <option value="TURKEY">TURKEY</option>
+              <option value="MEXICO">MEXICO</option>
+              <option value="AFRICA">AFRICA</option>
+              <option value="AUSTRALLIA">AUSTRALLIA</option>
+              <option value="NEW YORK">NEW YORK</option>
+              <option value="CANADA">CANADA</option>
+              <option value="BRAZIL">BRAZIL</option>
+              <option value="BANGLADESH">BANGLADESH</option>
+              <option value="BHUTAN">BHUTAN</option>
+              <option value="EGYPT">EGYPT</option>
+              <option value="UAE">UAE</option>
+              <option value="MOROCCO">MOROCCO</option>
+              <option value="ENGLAND">ENGLAND</option>
+              <option value="RUSSIA">RUSSIA</option>
+              <option value="SWITZERLAND">SWITZERLAND</option>
+              <option value="OTHER">OTHER</option>
+ </select>
+ <i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+      </div>
+
+      <div class="form-wrapper">
+         
+          <input id="phone" type="text" placeholder="PHONE NUMBER(ALONG WITH COUNTRY CODE)" class="form-control">
+       <i class="zmdi zmdi-tablet-mac"></i>
+       </div>
+
+       <div class="form-wrapper">
+         
+        <select name="" id="gender" class="form-control">
+            <option value="" disabled selected>SELECT YOUR GENDER</option>
+            <option value="Male">MALE</option>
+            <option value="Female">FEMALE</option>
+            <option value="other">OTHERS</option>
+</select>
+<i class="zmdi zmdi-caret-down" style="font-size: 17px;"></i>
+    </div>
+
+    <div class="form-wrapper">
+         
+        <input id="address" type="text" placeholder="ADDRESS" class="form-control">
+     <i class="zmdi zmdi-pin"></i>
+     </div>
+
+     <div class="form-wrapper">
+         
+        <input id="bio" type="text" placeholder="HOBBIES" class="form-control">
+     <i class="zmdi zmdi-account-box-mail"></i>
+     </div>
+
+      <div class="form-group container-login100-form-btn">
+<button id="btn-update" type="button" style="font-family: algerian;">UPDATE AND SET
+  <i class="zmdi  zmdi-arrow-right"></i>
+</button>
+
+ 
+    </form>
+   </div>
+</div>
+<div class="copy_right_footer" style="font-family: algerian;">
+    Developed by - MENAL KOUR
+  </div>
+
+  <script src='js/index.js'></script>
+  <script>
+      firebase.auth().onAuthStateChanged(function(user){
+        if(user){
+    var userId=firebase.auth().createUser.uid;
+    firebase.database().ref('Users/'+ userId).once('value').then(function(snapshot)
+    {
+      if(snapshot.val()){
+         window.location.href="MainPage1.html" 
+      } 
+     
+    });
+
+}
+
+
+      });
+     
+</script>
+    </body>
+</html>

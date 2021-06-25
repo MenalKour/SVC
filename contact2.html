@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  
+    <head>
+        <title>
+            CONTACT US
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            
+
+        
+  <script src='js/index.js'></script>
+   
+            <!-- MATERIAL DESIGN ICONIC FONT -->
+           <!-- MATERIAL DESIGN ICONIC FONT -->
+           <link rel="stylesheet" href="design_files/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+                
+           <!-- STYLE CSS -->
+   <link rel="stylesheet" href="design_files/css/style.css">
+   <link rel="stylesheet" href="style3.css">
+  
+        <style>
+            body{
+                background-image: url(design_files/images/conta.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+    </head>
+    <body>
+     <center><h1 style="font-family:algerian"><img src="menal.png" width=150px height=150px style="vertical-align:middle;align-items: left;"> MARAVILLOSAS CASA</h1>
+     </center>  
+     <div class="btn" style="margin-top: -20%;margin-left: 79%;">
+      <a href="MainPage.html">
+        <button id="btn-back" type="button" style="font-family: algerian;">BACK
+            <i class="zmdi  zmdi-arrow-left"></i>
+          </button>
+      </a>
+        
+    </div>
+    </a>
+  <center> <h1 style="font-family: algerian; margin-top: 3%; color:blue;">CONTACT US</h1> </center> 
+ <center> <h2 style="color:#17a2b8;font-family: algerian;">YOU CAN CONTACT US THROUGH MAIL AND PHONE NUMBER..</h2></center>
+  <h2 style="margin-top: 2%;color:#17a2b8;font-family: monospace;">JUST SCROLL DOWN AND FILL THE FORM.ADD YOUR EMAIL ID AND YOUR PROBLEM IN THE FORM GIVEN BELOW..</h2>
+ <h2 style="margin-top: 2%;color:#17a2b8;font-family:monospace;">OR YOU CAN SIMPLY CALL OR MESSAGE US ON '+91-8082304049' THIS NUMBER.. WE WILL SURELY PICK UP YOUR CALL AND ANSWER YOU..</h2>
+ <div class="btn" style="margin-top: 3%;margin-left: 41%;">
+    <section>
+        <div class="container">
+          <form action="https://formspree.io/f/mbjqkrpo" method="POST" id="my-form">
+      
+            <div class="form-group">
+              <label for="firstName"> First Name</label>
+              <input type="text" id="firstName" name="firstName">
+            </div>
+      
+            <div class="form-group">
+              <label for="latsName">Last Name</label>
+              <input type="text" id="lastName" name="lastName">
+            </div>
+      
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email">
+            </div>
+      
+            <div class="form-group">
+              <label for="massage">ISSUE</label>
+              <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+            </div>
+      
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <div id="status"></div>
+      </section>
+  
+  
+  </div>
+  <div class="copy_right_footer" style="position: fixed;
+  font-family: algerian;
+  color: black;
+  bottom: 0;
+  width: 100%;
+  background-color:aliceblue;
+  line-height: 2;
+  text-align: center;">
+    THIS APP IS DEVELOPED AS A PART OF SILICON VALLEY CHALLENGE PROGRAM OF WHITEHAT JUNIOR
+    </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+        // get the form elements defined in your form HTML above
+      
+        var form = document.getElementById("my-form");
+        // var button = document.getElementById("my-form-button");
+        var status = document.getElementById("status");
+      
+        // Success and Error functions for after the form is submitted
+      
+        function success() {
+          form.reset();
+          status.classList.add("success");
+          status.innerHTML = "Thanks!";
+        }
+      
+        function error() {
+          status.classList.add("error");
+          status.innerHTML = "Oops! There was a problem.";
+        }
+      
+        // handle the form submission event
+      
+        form.addEventListener("submit", function (ev) {
+          ev.preventDefault();
+          var data = new FormData(form);
+          ajax(form.method, form.action, data, success, error);
+        });
+      });
+      
+      // helper function for sending an AJAX request
+      
+      function ajax(method, url, data, success, error) {
+        var xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState !== XMLHttpRequest.DONE) return;
+          if (xhr.status === 200) {
+            success(xhr.response, xhr.responseType);
+          } else {
+            error(xhr.status, xhr.response, xhr.responseType);
+          }
+        };
+        xhr.send(data);
+      }
+    </script>
+</body>
+</html>

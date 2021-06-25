@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HOME</title>
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+       
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+         
+  
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script>
+
+   <style>
+    .copy_right_footer {
+    position: fixed;
+    color: black;
+    bottom: 0;
+    width: 100%;
+    background-color:#17A2B8;
+    line-height: 3;
+    text-align: center;
+    font-family: algerian;
+ }
+
+</style>
+    </head>
+    
+    <body class="h-100">
+    
+<nav class="navbar navbar-expand-lg bg-info text-white">
+<div class="container-fluid"> 
+
+<ul class="navbar-nav">
+<li class="active">
+    <img src='menal.png'style="width:100px;height:100px;">
+    <a class="navbar-brand" style="color:black;
+    text-decoration-style: wavy;font-family: algerian;" href="#">MARAVILLOSAS CASA</a>
+</li>
+
+<li>
+    <a class="nav-link" style="color:black;
+    text-decoration-style: wavy; cursor: pointer;font-family: algerian;margin-left:920%;margin-top: 50%;" onclick="switchView('home.html')">
+    <span style="color:black">HOME</span>
+</a>
+</li>
+
+<li>
+    <a class="nav-link" style="color:black;
+    text-decoration-style: wavy; cursor: pointer;font-family: algerian; margin-left:620%;margin-top: 32%;" onclick="switchView('myBlogs.html')"> 
+ <span style="color:black">MY POSTS</span>    
+</a>
+</li>
+</ul>
+
+<div class="dropdown navbar-right">
+<button 
+id="option-id"
+class="btn btn-light dropdown-toggle bg-info text-black"
+type="button"
+data-toggle="dropdown"
+aria-haspopup="true"
+aria-expanded="true"
+style="border-color: black;font-family: algerian;margin-left: -100%;"
+>
+    OPTIONS
+</button>
+<div class="dropdown-menu"
+aria-labelledby="option-id"
+style="margin-left:-100%;"
+>
+
+
+
+<a href="accountSettings.html"
+style="font-family:algerian"
+class="dropdown-item"
+>
+    SETTINGS
+</a>
+<a href="#"
+class="dropdown-item"
+style="font-family:algerian"
+id="btn-logout"
+>
+    LOG OUT
+</a>
+<a href="contact2.html"
+class="dropdown-item"
+
+style="font-family: algerian;"
+>
+    CONTACT
+</a>
+     
+
+    
+
+<a href="guide2.html"
+class="dropdown-item"
+
+style="font-family: algerian;"
+>
+    READ A GUIDE
+</a>
+</div>
+
+</div>
+
+
+</div>
+</nav>
+
+
+<div class="row h-100 bg-light">
+
+    <div class="col-lg-0 bg-secondary">
+        <ul class=" nav flex-column"></ul>
+    </div>
+    <div class="col-lg-12" style="background-image: url('design_files/images/aboutMe.jpg');background-size: cover;">
+        <div class="container" id="container">
+            <div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12" style="justify-content: center; align-items: center;margin-top: 3%;text-align: center;" id="box">
+                <h2 class="text-capitalize " style="font-family: algerian;">why choose us?</h2>
+            </div>
+          
+            <ul class="list-group">
+          
+              <li class="list-group-item list-group-item-success col-lg-8 col-md-8 col-sm-8 col-xs-8 " style="margin-left: 18%;font-family: algerian; margin-top: 13px;">
+                <h4 style="   border-bottom: 1px solid white;
+                padding: 8px;">OUR APP IS 100% SECURE</h4>
+                <img src="design_files/images/c.png" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12" style="  border-radius: 25px;">
+                <p class="list-group-item-text col-lg-7 col-md-7 col-sm-7 col-xs-12" style="font-family:algerian; margin-top:10px;">OUR APP IS 100% SECURE.ALL THE USERS ARE VERIFIED.YOUR DATA IS 100% SAFE AND SECURE BECAUSE YOUR DATA PRIVACY IS THE MOST IMPORTANT TASK FOR US..YOU HAVE TO JUST GO TO OPTIONS ON THE TOP RIGHT CORNER THEN THE SETTINGS AND THEN UPDATE YOUR SETTINGS AND BECOME AN AUTHENTICATED USER OF THIS APP!!</p>
+               </li>
+          
+              <li class="list-group-item list-group-item-warning col-lg-8 col-md-8 col-sm-8 col-xs-8 "  style="margin-left: 18%; margin-top: 3%;font-family: algerian; margin-top: 13px;">
+               <h4 style="   border-bottom: 1px solid white;
+               padding: 8px;">FREE AD POSTING,ANYTIME,ANYWHERE!</h4>
+               <img src="design_files/images/a.png" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12" style="  border-radius: 25px;">
+               <p class="list-group-item-text col-lg-7 col-md-7 col-sm-7 col-xs-12" style="font-family:algerian; margin-top:10px;">OUR APP IS TOTALLY FREE OF COST SO YOU CAN ACCESS TO EACH AND EVERY FUNCTION WITHOUT ANY PREMIUM PACK OR ANY THING ELSE..SO JUST GO TO HOME AND POST YOUR ADS..</p>
+             </li>
+          
+              <li class="list-group-item list-group-item-danger col-lg-8 col-md-8 col-sm-8 col-xs-8 "   style="margin-left: 18%; margin-top: 3%;font-family: algerian; margin-top: 13px;">
+                <h4 style="   border-bottom: 1px solid white;
+                padding: 8px;">GOT A TENANT!!DELETE YOUR AD ANYTIME!!</h4>
+                <img src="design_files/images/b.png" class="img-responsive col-lg-5 col-md-5 col-sm-5 col-xs-12" style="  border-radius: 25px;">
+                <p class="list-group-item-text col-lg-7 col-md-7 col-sm-7 col-xs-12" style="font-family:algerian; margin-top:10px;">YOU CAN REMOVE YOUR AD WHENEVER YOU WANT..IF YOU GOT A TENANT OF YOUR CHOICE YOU CAN DELETE YOUR AD ANYTIME.ALSO PLEASE MAE SURE TO LOG OUT BEFORE LEAVING..</p>
+               </li>
+           
+          </ul>
+          
+    </div>
+</div>
+
+</div>
+<div class="copy_right_footer">
+    Developed by - MENAL KOUR
+  </div>
+<script src='js/index.js'></script>
+<script>
+    firebase.auth().onAuthStateChanged(function(user){
+if(!user){
+  window.location.href='index.html';
+}
+    });
+</script>
+</body>
+</html>
